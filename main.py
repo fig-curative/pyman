@@ -48,7 +48,7 @@ def main():
                     if letter == player_guess:
                         guess_display[index] = player_guess
 
-            elif player_guess not in guessed_letters and player_guess not in secret_word:
+            elif player_guess not in secret_word:
                 guessed_letters.append(player_guess)
                 strikes += 1
                 if strikes == 1:
@@ -62,7 +62,7 @@ def main():
                     print(f"{player_guess} is not in the word.")
                     print(" O")
                     print("/|\\")
-                    print("/\\")
+                    print(" /\\")
                     print("You've been hanged. Game over!")
                     sys.exit()
 
