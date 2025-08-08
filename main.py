@@ -62,7 +62,7 @@ def main():
                     print(f"{player_guess} is not in the word.")
                     print(" O")
                     print("/|\\")
-                    print(" /\\")
+                    print("/\\")
                     print("You've been hanged. Game over!")
                     sys.exit()
 

@@ -18,3 +18,5 @@ room for improvement:
 2. better storage and calling of hangman illustrations
 3. expand wordlist
 4. player-selected difficulty levels
+5. print current hangman with every guess
+6. add gui
