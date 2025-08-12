@@ -17,3 +17,4 @@ ideas for improvement and expansion:
 1. add GUI
 2. expand wordlist
 3. player-selected difficulty levels
+4. "no spoilers" system argument to hide word reveal upon a loss
