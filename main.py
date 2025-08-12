@@ -1,6 +1,65 @@
 import sys
 import random
 
+art = [
+    r"""
+    ┌────┐
+    │
+    │
+    │
+    │
+    ┴──────
+    """,
+    r"""
+    ┌────┐
+    │    O
+    │
+    │
+    │
+    ┴──────
+    """,
+    r"""
+    ┌────┐
+    │    O
+    │    │
+    │
+    │
+    ┴──────
+    """,
+    r"""
+    ┌────┐
+    │    O
+    │   /│
+    │
+    │
+    ┴──────
+    """,
+    r"""
+    ┌────┐
+    │    O
+    │   /│\
+    │
+    │
+    ┴──────
+    """,
+    r"""
+    ┌────┐
+    │    O
+    │   /│\
+    │   /
+    │
+    ┴──────
+    """,
+    r"""
+    ┌────┐
+    │    O
+    │   /│\
+    │   / \
+    │
+    ┴──────
+    """
+]
+
 def main():
     def get_word():
         with open("wordlist.txt") as file:
@@ -11,13 +70,12 @@ def main():
         return secret_word
     
     secret_word = get_word()
-    print(f"{secret_word}") # for testing, remove later
     guessed_letters = []
     guess_display = ["_"] * len(secret_word)
     
     strikes = 0
 
-    print("Welcome to pyman, a simple hangman game in Python. Try to guess the word. If you guess three incorrect letters, you lose!")
+    print("Welcome to Pyman! Try to guess the secret word. If you get six letters wrong, you lose!")
     print("Guess the word!:")
     print("\n" + " ".join(guess_display))
 
@@ -51,22 +109,16 @@ def main():
             elif player_guess not in secret_word:
                 guessed_letters.append(player_guess)
                 strikes += 1
-                if strikes == 1:
-                    print(f"{player_guess} is not in the word.")
-                    print(" O")
-                elif strikes == 2:
-                    print(f"{player_guess} is not in the word.")
-                    print(" O")
-                    print("/|\\")
-                elif strikes >= 3:
-                    print(f"{player_guess} is not in the word.")
-                    print(" O")
-                    print("/|\\")
-                    print("/\\")
-                    print("You've been hanged. Game over!")
-                    sys.exit()
+                print(f"{player_guess} is not in the word.")
 
-        print("\n" + " ".join(guess_display))
+        if strikes <= 5:
+            print(art[strikes])
+            print("\n" + " ".join(guess_display))
+        else:
+            print(art[6])
+            print("You've been hanged. Game over!")
+            print(f"The word was: {secret_word}")
+            sys.exit()
 
 if __name__ == "__main__":
     main()
