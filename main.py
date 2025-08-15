@@ -82,8 +82,7 @@ def main():
     while True:
         # did player win?
         if "".join(guess_display) == secret_word:
-            print("That's right! The word was:")
-            print(f"{secret_word}")
+            print(f"That's right! The word was: {secret_word}")
             print("You won!")
             sys.exit()
         
